@@ -1,0 +1,30 @@
+﻿{
+    "name": "Web Scrapper",
+    "description": "This extension will analyze a page using Phantomjs",
+    "version": "1.0",
+
+
+
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "http://*/*",
+        "https://*/*"
+    ],
+
+
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "Scrape.html"
+    },
+
+   "content_scripts": [
+    {
+        "matches": [ "http://*/*", "https://*/*" ],
+        
+        "js": ["jquery.js"]
+    }
+],
+    "manifest_version": 2,
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'"
+}
